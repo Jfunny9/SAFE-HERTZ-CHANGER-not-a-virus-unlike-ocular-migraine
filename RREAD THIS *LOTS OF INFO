@@ -1,0 +1,40 @@
+# jfunny9s Hertz Changer
+
+Standalone Android APK for Meta Quest headsets (Quest 2, 3, 3S, Pro) that lets you change the display refresh rate directly from the headset.
+
+**Made by Daboys** – For fun/testing only. Use at your own risk!
+
+## Features
+- Dark-themed UI optimized for VR viewing
+- Consent check + extra warnings for risky low Hz
+- Options: 30 Hz (VERY RISKY), 48 Hz (risky), 60 Hz (safe), 72 Hz (safe), 80 Hz (experimental), 90 Hz (safe), 120 Hz (safe)
+- Tries to set `debug.oculus.refreshRate` via shell command
+- Reboot prompt after change (may need manual power hold if perms not granted)
+- Status feedback with error help
+
+## Requirements & Setup
+- Meta Quest with **Developer Mode** enabled (Settings > System > Developer).
+- **Wireless Debugging** turned on (one-time pairing may be needed for the command to work persistently).
+- Install the APK via Mobile VR Station, SideQuest, or browser download → allow Unknown Sources.
+
+## How to Use
+1. Launch the app from Unknown Sources.
+2. Read the warning → type `yes` in the field → tap "Accept Risks & Proceed".
+3. Tap your desired Hz button (start with safe 72/90 Hz!).
+4. If low Hz (<60), type `risky` to confirm.
+5. Wait for status → restart your current game/app or reboot Quest to apply.
+6. To verify: Use OVR Metrics (built-in dev tool) or feel the smoothness difference.
+
+## What It DOESN'T Do
+- **No automatic root or permanent system changes** – Relies on dev mode + wireless debugging for `setprop` to succeed. Without that setup, the command fails (app shows instructions).
+- **Doesn't support official adaptive refresh** (Quest 3 72-120 Hz stepping) – only fixed rates via debug prop.
+- **No extra tweaks** like resolution, CPU/GPU levels, FFR, or profiles (check The Ocular Migraine MCP for that).
+- **Not for non-Quest Android devices** – Tailored for Oculus debug props.
+- **Low Hz can crash/nausea** – If issues, force reboot (hold power 10-20s).
+
+## Disclaimer
+This is experimental/for fun. Meta doesn't officially support changing global refresh via user apps. Use responsibly—low rates can cause discomfort or hardware stress. No warranty, your headset/your risk.
+
+Download APK from Releases tab. Source code (Kivy Python) included for transparency/modding.
+
+Stay safe in VR! 🚀 #Quest #VR #RefreshRate
